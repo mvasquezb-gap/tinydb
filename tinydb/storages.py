@@ -22,13 +22,11 @@ def touch(path: str, create_dirs: bool):
     """
     if create_dirs:
         base_dir = os.path.dirname(path)
-
-        # Check if we need to create missing parent directories
         if not os.path.exists(base_dir):
-            os.makedirs(base_dir)
-
-    # Create the file by opening it in 'a' mode which creates the file if it
-    # does not exist yet but does not modify its contents
+            try:
+                os.makedirs(base_dir)
+            except OSError:
+                pass
     with open(path, 'a'):
         pass
 
