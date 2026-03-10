@@ -187,7 +187,7 @@ class Table:
         :param documents: an Iterable of documents to insert
         :returns: a list containing the inserted documents' IDs
         """
-        doc_ids = []
+        info = []
 
         def updater(table: dict):
             for document in documents:
