@@ -229,7 +229,7 @@ class Query(QueryInstance):
                         value = value[part]
                     else:
                         value = part(value)
-            except (KeyError, TypeError):
+            except (KeyError, TypeError, ValueError):
                 return False
             else:
                 # Perform the specified test
