@@ -127,10 +127,10 @@ class TinyDB(TableBase):
         if name in self._tables:
             return self._tables[name]
 
-        table = self.table_class(self.storage, name, **kwargs)
-        self._tables[name] = table
+        table_instance = self.table_class(self.storage, name, **kwargs)
+        self._tables[name] = table_instance
 
-        return table
+        return table_instance
 
     def tables(self) -> Set[str]:
         """
