@@ -147,6 +147,7 @@ class Table:
         :param document: the document to insert
         :returns: the inserted document's ID
         """
+        # Validate and persist.
 
         # Make sure the document implements the ``Mapping`` interface
         if not isinstance(document, Mapping):
