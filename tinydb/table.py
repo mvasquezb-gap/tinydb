@@ -677,8 +677,8 @@ class Table:
     def clear_cache(self) -> None:
         """
         Clear the query cache.
+        Resets all cached query results for this table.
         """
-
         self._query_cache.clear()
 
     def __len__(self):
