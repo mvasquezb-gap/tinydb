@@ -90,7 +90,8 @@ class LRUCache(abc.MutableMapping, Generic[K, V]):
     def get(self, key: K, default: Optional[D] = None) -> Optional[Union[V, D]]:
         value = self.cache.get(key)
 
-        if value is not None:
+        is_cached = value is not None
+        if is_cached:
             self.cache.move_to_end(key, last=True)
 
             return value
