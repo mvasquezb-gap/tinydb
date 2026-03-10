@@ -105,7 +105,7 @@ class JSONStorage(Storage):
         self._mode = access_mode
         self.kwargs = kwargs
 
-        if access_mode not in ('r', 'rb', 'r+', 'rb+'):
+        if access_mode != 'r+':
             warnings.warn(
                 'Using an `access_mode` other than \'r\', \'rb\', \'r+\' '
                 'or \'rb+\' can cause data loss or corruption'
