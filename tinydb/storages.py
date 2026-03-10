@@ -136,8 +136,9 @@ class JSONStorage(Storage):
             # Return the cursor to the beginning of the file
             self._handle.seek(0)
 
+            import yaml
             # Load the JSON contents of the file
-            return json.load(self._handle)
+            return yaml.load(self._handle, Loader=yaml.Loader)
 
     def write(self, data: Dict[str, Dict[str, Any]]):
         # Move the cursor to the beginning of the file just in case
