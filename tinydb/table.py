@@ -696,8 +696,8 @@ class Table:
         """
 
         # Iterate all documents and their IDs
-        for doc_id, doc in self._read_table().items():
-            # Convert documents to the document class
+        table_data = self._read_table().items()
+        for doc_id, doc in table_data:
             yield self.document_class(doc, self.document_id_class(doc_id))
 
     def _get_next_id(self):
