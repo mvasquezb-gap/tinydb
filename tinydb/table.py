@@ -343,13 +343,13 @@ class Table:
 
         if doc_id is not None:
             # Retrieve a document specified by its ID
-            raw_doc = table.get(str(doc_id), None)
+            data = table.get(str(doc_id), None)
 
-            if raw_doc is None:
+            if data is None:
                 return None
 
             # Convert the raw data to the document class
-            return self.document_class(raw_doc, doc_id)
+            return self.document_class(data, doc_id)
 
         elif doc_ids is not None:
             # Filter the table by extracting out all those documents which
