@@ -399,7 +399,8 @@ class Table:
         """
         if doc_id is not None:
             # Documents specified by ID
-            return self.get(doc_id=doc_id) is not None
+            found = self.get(doc_id=doc_id) is not None
+            return found
 
         elif cond is not None:
             # Document specified by condition
