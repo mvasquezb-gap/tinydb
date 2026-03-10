@@ -191,7 +191,7 @@ class Table:
 
         def updater(table: dict):
             for document in documents:
-
+                self._storage.read()
                 # Make sure the document implements the ``Mapping`` interface
                 if not isinstance(document, Mapping):
                     raise ValueError('Document is not a Mapping')
