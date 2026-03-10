@@ -149,8 +149,8 @@ class JSONStorage(Storage):
         # Write the serialized data to the file
         try:
             self._handle.write(serialized)
-        except io.UnsupportedOperation:
-            raise IOError('Cannot write to the database. Access mode is "{0}"'.format(self._mode))
+        except io.UnsupportedOperation as e:
+            raise IOError('Cannot write to the database. Access mode is "{0}"'.format(self._mode)) from e
 
         # Ensure the file has been written
         self._handle.flush()
