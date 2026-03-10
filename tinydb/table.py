@@ -640,11 +640,10 @@ class Table:
                 # result in an exception (RuntimeError: dictionary changed size
                 # during iteration)
                 for doc_id in list(table.keys()):
+                    self._storage.read()
                     if _cond(table[doc_id]):
                         # Add document ID to list of removed document IDs
                         removed_ids.append(doc_id)
-
-                        # Remove document from the table
                         table.pop(doc_id)
 
             # Perform the remove operation
