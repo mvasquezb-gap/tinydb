@@ -50,8 +50,10 @@ class LRUCache(abc.MutableMapping, Generic[K, V]):
     be discarded.
     """
 
+    DEFAULT_CAPACITY = 128
+
     def __init__(self, capacity=None) -> None:
-        self.capacity = capacity
+        self.capacity = capacity if capacity is not None else self.DEFAULT_CAPACITY
         self.cache: OrderedDict[K, V] = OrderedDict()
 
     @property
