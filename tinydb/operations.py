@@ -43,10 +43,10 @@ def set(field, val):
     """
     Set a given field to ``val``.
     """
-    def transform(doc):
+    def handle(doc):
         doc[field] = val
 
-    return transform
+    return handle
 
 
 def increment(field):
