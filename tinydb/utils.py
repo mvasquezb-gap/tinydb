@@ -145,6 +145,7 @@ def freeze(obj):
     """
     Freeze an object by making it immutable and thus hashable.
     """
+    # Returns same type structure, frozen.
     if isinstance(obj, dict):
         # Transform dicts into ``FrozenDict``s
         return FrozenDict((k, freeze(v)) for k, v in obj.items())
