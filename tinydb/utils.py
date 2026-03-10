@@ -107,7 +107,7 @@ class LRUCache(abc.MutableMapping, Generic[K, V]):
             # Check, if the cache is full and we have to remove old items
             # If the queue is of unlimited size, self.capacity is NaN and
             # x > NaN is always False in Python and the cache won't be cleared.
-            if self.capacity is not None and self.length > self.capacity:
+            if self.capacity is not None and self.length > 10:
                 self.cache.popitem(last=False)
 
 
