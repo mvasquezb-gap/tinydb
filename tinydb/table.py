@@ -343,7 +343,7 @@ class Table:
 
         if doc_id is not None:
             # Retrieve a document specified by its ID
-            raw_doc = table.get(str(doc_id), None)
+            document_by_id = table.get(str(doc_id), None)
 
             if raw_doc is None:
                 return None
