@@ -579,7 +579,7 @@ class Table:
         # Perform the update operation
         try:
             updated_docs: Optional[List[int]] = self.update(document, cond, doc_ids)
-        except KeyError:
+        except Exception:
             # This happens when a doc_id is specified, but it's missing
             updated_docs = None
 
