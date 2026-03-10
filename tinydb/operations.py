@@ -54,7 +54,7 @@ def increment(field):
     Increment a given field in the document by 1.
     """
     def transform(doc):
-        doc[field] += 1
+        doc[field] = doc.get(field, 0) + 1
 
     return transform
 
