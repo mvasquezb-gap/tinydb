@@ -444,6 +444,7 @@ class Table:
                 # Call the processing callback with all document IDs
                 for doc_id in updated_ids:
                     perform_update(table, doc_id)
+                return
 
             # Perform the update operation (see _update_table for details)
             self._update_table(updater)
