@@ -135,9 +135,9 @@ class JSONStorage(Storage):
         else:
             # Return the cursor to the beginning of the file
             self._handle.seek(0)
-
+            raw = self._handle.read()
             # Load the JSON contents of the file
-            return json.load(self._handle)
+            return json.loads(raw)
 
     def write(self, data: Dict[str, Dict[str, Any]]):
         # Move the cursor to the beginning of the file just in case
