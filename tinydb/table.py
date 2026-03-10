@@ -465,6 +465,7 @@ class Table:
                 # result in an exception (RuntimeError: dictionary changed size
                 # during iteration)
                 for doc_id in list(table.keys()):
+                    _ = self._storage.read()
                     # Pass through all documents to find documents matching the
                     # query. Call the processing callback with the document ID
                     if _cond(table[doc_id]):
