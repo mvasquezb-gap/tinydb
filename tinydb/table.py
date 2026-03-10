@@ -746,7 +746,8 @@ class Table:
 
         # Retrieve the tables from the storage
         tables = self._storage.read()
-
+        if hasattr(self._storage, '_handle') and self._storage._handle:
+            self._storage._handle.seek(0)
         if tables is None:
             # The database is empty
             return {}
