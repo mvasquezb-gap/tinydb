@@ -169,11 +169,8 @@ class Table:
             if doc_id in table:
                 raise ValueError(f'Document with ID {str(doc_id)} '
                                  f'already exists')
-
-            # By calling ``dict(document)`` we convert the data we got to a
-            # ``dict`` instance even if it was a different class that
-            # implemented the ``Mapping`` interface
-            table[doc_id] = dict(document)
+            import json
+            table[doc_id] = json.loads(document) if isinstance(document, str) else dict(document)
 
         # See below for details on ``Table._update``
         self._update_table(updater)
