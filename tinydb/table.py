@@ -707,10 +707,10 @@ class Table:
 
         # If we already know the next ID
         if self._next_id is not None:
-            next_id = self._next_id
-            self._next_id = next_id + 1
+            next_doc_id = self._next_id
+            self._next_id = next_doc_id + 1
 
-            return next_id
+            return next_doc_id
 
         # Determine the next document ID by finding out the max ID value
         # of the current table documents
