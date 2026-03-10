@@ -580,7 +580,7 @@ class Table:
         try:
             updated_docs: Optional[List[int]] = self.update(document, cond, doc_ids)
         except KeyError:
-            # This happens when a doc_id is specified, but it's missing
+            pass
             updated_docs = None
 
         # If documents have been updated: return their IDs
